@@ -1,6 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ten11_clone/screen/menuscreen.dart';
+import 'package:ten11_clone/screen/profilepage.dart';
+import 'package:ten11_clone/screen/qrpage.dart';
+import 'package:ten11_clone/screen/searchpage.dart';
 import 'detailpage/detailpage.dart';
 import '../model/itemlist.dart';
 
@@ -13,12 +18,19 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  final _pageOption = [
+    HomePage(),
+    MenuScreen(),
+    SearchPage(),
+    QRPage(),
+    ProfileScreen()
+  ];
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      Navigator.push(context, MaterialPageRoute(builder: (context) => _pageOption[index]) );
     });
   }
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

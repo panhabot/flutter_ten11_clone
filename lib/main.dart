@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ten11_clone/screen/homepage.dart';
+import 'package:ten11_clone/screen/menuscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,11 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Roboto Condensed',
         primarySwatch: Colors.grey,
       ),
+      // initialRoute: '/',
+      // routes: {
+      //   '/':(context) => const HomePage(),
+      //   '/menu': (context) => const MenuScreen()
+      // },
       home: const HomePage(),
     );
   }

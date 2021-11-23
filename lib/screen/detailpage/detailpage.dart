@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:ten11_clone/model/itemlist.dart';
 import 'package:ten11_clone/screen/detailpage/simlaritems.dart';
+import 'package:ten11_clone/screen/homepage.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key, required this.item}) : super(key: key);
@@ -20,6 +21,8 @@ class DetailPage extends StatelessWidget {
             child: Icon(Icons.shopping_bag_outlined),
           ),
           backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          leading: IconButton(icon: Icon(Icons.arrow_back),onPressed: (){Navigator.popUntil(context, ModalRoute.withName('/'));}),
           flexibleSpace: FlexibleSpaceBar(
             background: Image.asset(
               item.path,
@@ -33,7 +36,7 @@ class DetailPage extends StatelessWidget {
         SliverList(
             delegate: SliverChildListDelegate([
           Container(
-              padding: EdgeInsets.symmetric(horizontal:10, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               color: Colors.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,7 +132,11 @@ class DetailPage extends StatelessWidget {
                           TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Container(margin: EdgeInsets.only(top: 10, ),child: Text('Code. 2238494557')),
+                  Container(
+                      margin: EdgeInsets.only(
+                        top: 10,
+                      ),
+                      child: Text('Code. 2238494557')),
                   Text(
                       'Stretch Cotton T-shirt Featuring A crew-Neck and Short Sleeves'),
                   Container(
